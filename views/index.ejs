@@ -9,5 +9,18 @@
 </head>
 <body>
   <h1><%= title %></h1>
+  <a href="/skills">Skills List</a>
+  <% if (error) { %>
+    <h2><%= error %></h2>
+    <% } %>
+    <ul>
+      <% skills.forEach(function(skill) { %>
+        <li>
+          <%= skill.text %>
+          - 
+          <%= skill.has ? 'has' : 'does not have' %>
+        </li>
+      <% }) %>
+    </ul>
 </body>
 </html>
